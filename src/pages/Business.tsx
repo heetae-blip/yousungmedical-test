@@ -54,7 +54,8 @@ const Business = () => {
                   <img 
                     src={item.image} 
                     alt={item.brand} 
-                    className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
                       // Fallback image if the specific brand image is not found
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&q=80&w=500';

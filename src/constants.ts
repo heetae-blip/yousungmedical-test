@@ -68,11 +68,11 @@ export const PARTNERS: Partner[] = [
 ];
 
 export const BUSINESS_ITEMS: BusinessItem[] = [
-  { brand: 'Roche', items: ['Cobas e411', 'Cobas c503', 'Cobas e801', 'Cobas Pure c303', 'Cobas Pure e402', 'Cobas c311', 'Cobas u411', 'Cobas t511', 'Cobas b123', 'Cobas 6500'], image: 'https://images.unsplash.com/photo-1579154234431-da6781d706c1?auto=format&fit=crop&q=80&w=800' },
-  { brand: 'Bio Systems', items: ['BA400', 'BA200', 'A25', 'A15'], image: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=800' },
-  { brand: 'Werfen', items: ['TOP 550', 'TOP 350', 'GEM 5000'], image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800' },
-  { brand: 'Abbott', items: ['ALINITY', 'ARCHITECT'], image: 'https://images.unsplash.com/photo-1532187875605-1ef6c237ddc4?auto=format&fit=crop&q=80&w=800' },
-  { brand: 'FUJI FILM', items: ['FDC NX-600', 'FDC NX 10NE'], image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800' },
-  { brand: 'Sysmex', items: ['XN-1000', 'XN-550', 'XQ-520', 'XP-300', 'XR-1000', 'CA-620'], image: 'https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?auto=format&fit=crop&q=80&w=800' },
-  { brand: '기타', items: ['AFIAS', 'TOSHO (G11)', 'SD BIOSENSOR', 'BIOMERIEUX'], image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=800' },
+  { brand: 'Roche', items: ['Cobas e411', 'Cobas c503', 'Cobas e801', 'Cobas Pure c303', 'Cobas Pure e402', 'Cobas c311', 'Cobas u411', 'Cobas t511', 'Cobas b123', 'Cobas 6500'], image: '/roche.png' },
+  { brand: 'Bio Systems', items: ['BA400', 'BA200', 'A25', 'A15'], image: '/biosystems.png' },
+  { brand: 'Werfen', items: ['TOP 550', 'TOP 350', 'GEM 5000'], image: '/werfen.png' },
+  { brand: 'Abbott', items: ['ALINITY', 'ARCHITECT'], image: '/abbott.png' },
+  { brand: 'FUJI FILM', items: ['FDC NX-600', 'FDC NX 10NE'], image: '/fujifilm.png' },
+  { brand: 'Sysmex', items: ['XN-1000', 'XN-550', 'XQ-520', 'XP-300', 'XR-1000', 'CA-620'], image: '/sysmex.png' },
+  { brand: '기타', items: ['AFIAS', 'TOSHO (G11)', 'SD BIOSENSOR', 'BIOMERIEUX'], image: '/others.png' },
 ];

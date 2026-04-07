@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, Phone, Mail, MapPin, BarChart3, Building2, Briefcase, Home as HomeIcon, Settings, Activity } from 'lucide-react';
+import { Menu, X, ChevronRight, Phone, Mail, MapPin, BarChart3, Building2, Briefcase, Home as HomeIcon, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from './lib/utils';
 
@@ -12,11 +12,22 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 
 const Logo = ({ className = "h-10" }: { className?: string }) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className={cn(className, "flex items-center justify-center shrink-0")}>
-      <div className="h-full aspect-square bg-brand-point rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-point/20">
-        <Activity size={24} strokeWidth={3} />
-      </div>
+      {!imageError ? (
+        <img
+          src="/logo.png"
+          alt="YS Logo"
+          className="h-full w-auto object-contain"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <div className="h-full aspect-square bg-brand-point rounded-lg flex items-center justify-center text-white font-bold text-xs">
+          YS
+        </div>
+      )}
     </div>
   );
 };

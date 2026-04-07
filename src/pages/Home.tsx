@@ -55,7 +55,6 @@ const Hero = () => {
               src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" 
               alt="Hospital Interior" 
               className="w-full h-full object-cover opacity-90"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
@@ -132,8 +131,7 @@ const Home = () => {
                     <img 
                       src={item.image} 
                       alt={item.brand} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1583912267550-d44d7a125e7e?auto=format&fit=crop&q=80&w=500';
                         (e.target as HTMLImageElement).className = "w-full h-full object-cover opacity-20 grayscale";

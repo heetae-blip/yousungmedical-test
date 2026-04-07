@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-point: #1B7A8A;
-  --color-brand-dark: #155E6A;
-  --color-brand-light: #E8F4F6;
+  --color-brand-point: #238191;
+  --color-brand-dark: #1a616d;
+  --color-brand-light: #e9f2f4;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+  }
 }

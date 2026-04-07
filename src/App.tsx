@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, Phone, Mail, MapPin, BarChart3, Building2, Briefcase, Home as HomeIcon, Settings } from 'lucide-react';
+import { Menu, X, ChevronRight, Phone, Mail, MapPin, BarChart3, Building2, Briefcase, Home as HomeIcon, Settings, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from './lib/utils';
 
@@ -98,17 +98,17 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
-            <div className="flex flex-col p-6 gap-4">
+            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "flex items-center gap-3 text-lg font-medium",
-                    location.pathname === item.path ? "text-brand-point" : "text-gray-600"
+                    "text-lg font-bold flex items-center gap-4",
+                    location.pathname === item.path ? "text-brand-point" : "text-gray-900"
                   )}
                 >
                   <item.icon size={20} />
@@ -118,7 +118,7 @@ const Header = () => {
               <Link
                 to="/admin"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 text-lg font-medium text-gray-400"
+                className="text-lg font-bold flex items-center gap-4 text-gray-400"
               >
                 <Settings size={20} />
                 관리자
@@ -133,27 +133,19 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 pt-16 pb-8">
+    <footer className="bg-gray-50 border-t border-gray-100 pt-20 pb-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-3 mb-8">
               <Logo className="h-10" />
-              <span className="text-xl font-bold text-gray-900">(주)유성메디칼</span>
+              <span className="text-xl font-bold text-gray-900 tracking-tight">(주)유성메디칼</span>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-md mb-6">
-              신뢰, 정직, 성실을 바탕으로 최고의 제품과 서비스를 제공하며 고객과 함께 성장하는 의료기기 유통 전문 기업입니다.
+            <p className="text-gray-500 text-sm leading-relaxed max-w-sm mb-8">
+              의료 현장의 가치를 높이는 혁신적인 진단 솔루션 파트너. 
+              신뢰와 정직을 바탕으로 최상의 서비스를 제공합니다.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-point hover:border-brand-point transition-all">
-                <BarChart3 size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-brand-point hover:border-brand-point transition-all">
-                <Mail size={18} />
-              </a>
-            </div>
           </div>
-          
           <div>
             <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-6">Quick Links</h4>
             <ul className="space-y-4">
@@ -162,7 +154,6 @@ const Footer = () => {
               <li><Link to="/contact" className="text-gray-500 hover:text-brand-point text-sm transition-colors">문의하기</Link></li>
             </ul>
           </div>
-
           <div>
             <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-6">Contact Info</h4>
             <ul className="space-y-4">
@@ -181,27 +172,20 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-xs">
-            © 2026 (주)유성메디칼. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-gray-400 hover:text-gray-600 text-xs transition-colors">이용약관</a>
-            <a href="#" className="text-gray-400 hover:text-gray-600 text-xs transition-colors">개인정보처리방침</a>
-          </div>
+          <p className="text-gray-400 text-xs">© 2026 (주)유성메디칼. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default function App() {
+const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-brand-light selection:text-brand-dark">
+      <div className="min-h-screen bg-white flex flex-col">
         <Header />
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -214,4 +198,6 @@ export default function App() {
       </div>
     </Router>
   );
-}
+};
+
+export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings, ShieldAlert } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
 
 const Admin = () => {
   return (
